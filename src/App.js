@@ -1,25 +1,63 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Users from "./components/USERS/Users"
+import UsersForm from "./components/USERSFORM/UsersForm"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor (props) 
+    {
+        super (props)
+
+        this.state = {
+
+           users : [ 
+            
+              // { 
+              //   name : "Randy",
+              //   email: "randy@gmail",
+              //   gen: 18,
+              // },
+
+              // { 
+              //   name : "Elorm",
+              //   email: "elorm@gmail",
+              //   gen: 19,
+              // },
+
+              // { 
+              //   name : "Davoh",
+              //   email: "davoh@gmail.com",
+              //   gen: 30,
+              // },
+
+          ] 
+        }
+    }
+
+    handleAddUser = (newUser)=> {
+          this.setState({
+            users: [...this.state.users, newUser]
+          })
+    }
+
+
+  render() {
+    return (
+      <div>
+       <UsersForm addUser = {this.handleAddUser}/>
+       {this.state.users.map (
+          (item, index) => {
+            return (
+              <div>
+             <Users name={item.name} email ={item.email} gen = {item.gen}/>
+             
+              </div>
+            )
+          }
+       )}
+  
+      </div>
+    );
+  }
 }
 
 export default App;

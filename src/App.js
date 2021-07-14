@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Users from "./components/USERS/Users"
+import "./App.css"
 import UsersForm from "./components/USERSFORM/UsersForm"
+import UserList from "./components/USERLIST/UserList"
 
 class App extends Component {
   constructor (props) 
@@ -9,51 +10,44 @@ class App extends Component {
 
         this.state = {
 
-           users : [ 
-            
-              // { 
-              //   name : "Randy",
-              //   email: "randy@gmail",
-              //   gen: 18,
-              // },
-
-              // { 
-              //   name : "Elorm",
-              //   email: "elorm@gmail",
-              //   gen: 19,
-              // },
-
-              // { 
-              //   name : "Davoh",
-              //   email: "davoh@gmail.com",
-              //   gen: 30,
-              // },
-
-          ] 
+           users : [] 
         }
     }
 
     handleAddUser = (newUser)=> {
+          newUser.id = Math.random().toString();
           this.setState({
             users: [...this.state.users, newUser]
           })
     }
+
+    handleDeleteUser =(userId)=> {
+      const savedusers = this.state.users.filter(
+            (user)=>{
+               return user.id !==userId;
+            })
+            this.setState({users: savedusers})
+    }
+
+    handleEditUser = (updatedUser) => {
+      this.setState({
+        users: this.state.users.map((user) =>
+          user.id === updatedUser.id ? updatedUser : user
+        ),
+      });
+    };
 
 
   render() {
     return (
       <div>
        <UsersForm addUser = {this.handleAddUser}/>
-       {this.state.users.map (
-          (item, index) => {
-            return (
-              <div>
-             <Users name={item.name} email ={item.email} gen = {item.gen}/>
-             
-              </div>
-            )
-          }
-       )}
+       <UserList
+          users={this.state.users}
+          deleteUser = {this.handleDeleteUser}
+          editUser = {this.handleEditUser}
+       
+       />
   
       </div>
     );

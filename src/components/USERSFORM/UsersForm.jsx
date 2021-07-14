@@ -12,7 +12,7 @@ class UsersForm extends Component {
 
             name : "",
             email: "",
-            gen: ""
+            number: ""
     
         }
         
@@ -32,7 +32,7 @@ class UsersForm extends Component {
            this.state = {
             name : "",
             email: "",
-            gen: ""
+            number: ""
         }
         )
     }
@@ -58,8 +58,8 @@ class UsersForm extends Component {
              <br />
 
 
-             <label htmlFor=""> Gen
-             <input type="number" value = {this.state.gen} name = "gen" onChange = {this.handleChange} required ="required"/> 
+             <label htmlFor=""> Number
+             <input type="number" value = {this.state.number} name = "number" onChange = {this.handleChange} required ="required"/> 
              </label>
              <br/>
              <br />

@@ -1,10 +1,15 @@
+
+html {
+    overflow-x: hidden !important;
+}
+
 .users{
     display: flex;
     flex-direction: column;
     background-color: tomato;
     align-items:center;
     justify-content: center;
-    
+    color:black;
     padding:3rem;
     font-family: 'Montserrat', sans-serif !important;
     
@@ -13,6 +18,7 @@
 
 .users h2 {
     align-items: center;
+   
 }
 
 

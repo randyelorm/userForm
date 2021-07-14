@@ -53,7 +53,7 @@ class EditForm extends Component {
                     <input
                         type="number"
                         name="number"
-                        value={this.state.gen}
+                        value={this.state.number}
                         onChange={this.handleChange}
                     />
                 </div>

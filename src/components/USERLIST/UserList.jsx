@@ -8,7 +8,7 @@ const UserList = ({users,deleteUser,editUser}) => {
           return (
             
            <User 
-           user ={item} 
+           user ={item}  
            deleteUser = {deleteUser}
            editUser = {editUser}
            />

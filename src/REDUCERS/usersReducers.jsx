@@ -15,8 +15,16 @@ const usersReducer = (state = initialState, action)=> {
            return { ...state.users, users: [...state.users, action.payload] }
        
        case "EDIT_USER": 
-           return { ...state.users, users: [action.payload] }  
-
+          const updatedUser = state.users.map (
+              (each_user)=> {
+                    if (each_user.id === action.user_id) {
+                        return {...each_user, ...action.updatedUser}
+                    } else {
+                        return each_user
+                    }
+              }
+          ) 
+             return {...state, users: updatedUser}
 
        case "DELETE_USER":
     

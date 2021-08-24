@@ -11,12 +11,13 @@ export const addUser = (user) => {
     }
 }
 
-export const EditUser = (updatedUser)=> {
+export const EditUser = (user_id, updatedUser)=> {
     updatedUser.id = Math.random().toString();
   
     return {
         type: EDIT_USER,
-        payload: updatedUser
+        user_id : user_id,
+        updatedUser : updatedUser
     }
    
     

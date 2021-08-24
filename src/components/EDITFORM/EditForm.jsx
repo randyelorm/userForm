@@ -21,7 +21,7 @@ class EditForm extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         // this.props.EditNewUser(this.state)
-        this.props.EditNewUser(this.state)
+        this.props.EditNewUser(this.state.id, this.state)
         this.setState({
             name: "",
             email: "",

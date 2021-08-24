@@ -1,4 +1,6 @@
 export const ADD_USER = "ADD_USER"
+export const EDIT_USER = "EDIT_USER"
+export const DELETE_USER = "DELETE_USER"
 
 export const addUser = (user) => {
   
@@ -7,4 +9,26 @@ export const addUser = (user) => {
         type: ADD_USER,
         payload: user
     }
+}
+
+export const EditUser = (updatedUser)=> {
+    updatedUser.id = Math.random().toString();
+  
+    return {
+        type: EDIT_USER,
+        payload: updatedUser
+    }
+   
+    
+}
+
+
+export const DeleteUser = (id) => {
+    
+    return {
+        type: DELETE_USER,
+         payload: id
+      }
+   
+    
 }

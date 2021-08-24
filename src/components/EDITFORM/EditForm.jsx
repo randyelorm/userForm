@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { EditUser } from '../../ACTIONS/UserAction'
+import { connect } from 'react-redux';
 import "./editform.css"
 
 class EditForm extends Component {
@@ -18,7 +20,8 @@ class EditForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.editUser(this.state);
+        // this.props.EditNewUser(this.state)
+        this.props.EditNewUser(this.state)
         this.setState({
             name: "",
             email: "",
@@ -65,4 +68,13 @@ class EditForm extends Component {
     }
 }
 
-export default EditForm;
+
+
+const mapDispatchToProps = {
+    EditNewUser: EditUser
+
+}
+
+
+
+export default connect(null, mapDispatchToProps) (EditForm);

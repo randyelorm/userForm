@@ -50,21 +50,36 @@ class UsersForm extends Component {
             <form onSubmit ={this.handleSubmit} className ="classForm-section">
             
             <label htmlFor=""> Name
-             <input type="text" value = {this.state.name} name = "name" onChange = {this.handleChange} required ="required" /> 
+             <input 
+             type="text" 
+              value = {this.state.name} 
+              name = "name" 
+              onChange = {this.handleChange} 
+              required ="required" /> 
              </label>
              <br/>
              <br />
 
            
              <label htmlFor=""> Email
-             <input type="email" value ={this.state.email} name = "email" onChange = {this.handleChange} required ="required" /> 
+             <input
+              type="email"
+               value ={this.state.email} 
+               name = "email" 
+               onChange = {this.handleChange}
+                required ="required" /> 
              </label>
              <br/>
              <br />
 
 
              <label htmlFor=""> Number
-             <input type="number" value = {this.state.number} name = "number" onChange = {this.handleChange} required ="required"/> 
+             <input
+              type="number" 
+             value = {this.state.number} 
+             name = "number" 
+             onChange = {this.handleChange} 
+             required ="required"/> 
              </label>
              <br/>
              <br />

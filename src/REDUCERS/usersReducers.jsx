@@ -6,10 +6,32 @@ users: []
 
 
 const usersReducer = (state = initialState, action)=> {
+    
+    
 
    switch (action.type) {
+
        case "ADD_USER":
            return { ...state.users, users: [...state.users, action.payload] }
+       
+       case "EDIT_USER": 
+           return { ...state.users, users: [action.payload] }  
+
+
+       case "DELETE_USER":
+    
+        let notDeletedUsers = state.users.filter(
+            (each_item_in_array)=> {
+                // console.log(each_item_in_array.id)
+                // console.log(action.payload)
+                // console.log(each_item_in_array.id !== action.payload) 
+                return each_item_in_array.id !== action.payload
+            })
+
+            return {users: notDeletedUsers }
+           
+        
+           
         
    
        default:

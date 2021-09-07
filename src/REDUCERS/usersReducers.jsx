@@ -30,9 +30,7 @@ const usersReducer = (state = initialState, action)=> {
     
         let notDeletedUsers = state.users.filter(
             (each_item_in_array)=> {
-                // console.log(each_item_in_array.id)
-                // console.log(action.payload)
-                // console.log(each_item_in_array.id !== action.payload) 
+           
                 return each_item_in_array.id !== action.payload
             })
 

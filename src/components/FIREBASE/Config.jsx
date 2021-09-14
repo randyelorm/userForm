@@ -3,6 +3,8 @@
 
 import { initializeApp } from "firebase/app";
 import firebase from "firebase/app"
+import "firebase/firestore"
+
   
 
 const firebaseConfig = {
@@ -16,6 +18,8 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+firebase.firestore()
+
 
 
 

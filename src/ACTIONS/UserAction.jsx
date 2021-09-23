@@ -5,10 +5,12 @@ export const DELETE_USER = "DELETE_USER"
 export const addUser = (user) => {
   
     user.id = Math.random().toString();
-    // return {
-    //     type: ADD_USER,
-    //     payload: user
+
+      // return {
+    //     type: "ADD_CONTACT",
+    //     payload: contact
     // }
+    
 
     return(dispatch,state,{getFirestore})=>{
 
@@ -19,7 +21,12 @@ export const addUser = (user) => {
       )
 
 
+      
+
+
     }
+
+    
 }
 
 export const EditUser = (user_id, updatedUser)=> {
@@ -43,4 +50,30 @@ export const DeleteUser = (id) => {
       }
    
     
+}
+
+
+export const getAllusers =()=> {
+    return(dispatch, state,{getFirestore})=> {
+        getFirestore().collection("users").onSnapshot(
+            (snapshot)=> {
+                let users = []
+                snapshot.forEach(
+                    (doc)=> {
+                        users.push(doc.data())
+                        console.log(doc.data())
+                    }
+                )
+
+
+                dispatch(
+                    {
+                        type: "SET_ALL_USERS",
+                        payload: users
+                    }
+                )
+            }
+        )
+
+    }
 }

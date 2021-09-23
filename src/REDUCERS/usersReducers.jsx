@@ -36,7 +36,9 @@ const usersReducer = (state = initialState, action)=> {
 
             return {users: notDeletedUsers }
            
-        
+      case'SET_ALL_USERS':
+      console.log(action.payload)
+      return {...state, users: action.payload};
            
         
    

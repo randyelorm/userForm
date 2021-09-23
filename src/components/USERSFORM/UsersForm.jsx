@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import "./form.css";
 
-import { addUser } from '../../ACTIONS/UserAction'
+import { addUser, getAllusers } from '../../ACTIONS/UserAction'
 import { connect } from 'react-redux';
 
 
@@ -41,6 +41,11 @@ class UsersForm extends Component {
         }
         )
     }
+
+    componentDidMount(){
+        this.props.getAllusers()
+    }
+
    
 
 
@@ -92,7 +97,8 @@ class UsersForm extends Component {
 }
 
 const mapDispatchToProps = {
-    addNewUser: addUser
+    addNewUser: addUser,
+    getAllusers:getAllusers,
 }
 
 export default connect(null, mapDispatchToProps) (UsersForm);

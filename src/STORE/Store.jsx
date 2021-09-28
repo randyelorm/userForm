@@ -14,3 +14,6 @@ const Store = createStore(usersReducer, compose(
     ))
 
 export default Store
+
+// Why did we install redux firebase if we are not using it here:
+// When I didn't install it, the app didn't work.

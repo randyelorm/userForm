@@ -37,7 +37,7 @@ const usersReducer = (state = initialState, action)=> {
             return {users: notDeletedUsers }
            
       case'SET_ALL_USERS':
-      console.log(action.payload)
+    
       return {...state, users: action.payload};
            
         
@@ -53,3 +53,6 @@ export default usersReducer
 
 // The reducer is a function that akes a state and action and updates the store with the updated state based 
 // on the action. 
+
+
+// Go to order and limit data to help you order the data per the time it comes

@@ -1,10 +1,8 @@
-export const ADD_USER = "ADD_USER"
-export const EDIT_USER = "EDIT_USER"
-export const DELETE_USER = "DELETE_USER"
+
 
 export const addUser = (user) => {
   
-    user.id = Math.random().toString();
+    // user.id = Math.random().toString();
 
       // return {
     //     type: "ADD_CONTACT",
@@ -21,8 +19,6 @@ export const addUser = (user) => {
             //  console.log(docs)
           }
       )
-
-    //  What would have been here if not console.log
       
 
 
@@ -31,17 +27,11 @@ export const addUser = (user) => {
     
 }
 
-export const EditUser = (user_id, updatedUser)=> {
-    updatedUser.id = Math.random().toString();
-  
-    // return {
-    //     type: EDIT_USER,
-    //     user_id : user_id,
-    //     updatedUser : updatedUser
-    // }
-
-    return (dispatch, state, {getFirestore})=> {
-        getFirestore().collection("users").doc(updatedUser.id).set(updatedUser)
+export const EditUser = (updatedUser)=> {
+ return (dispatch, state, {getFirestore})=> {
+    
+        getFirestore().collection("users").doc(updatedUser.id).update(updatedUser)
+       
         .then(
             ()=> {
                 console.log("Document Successfuly updated")
@@ -54,6 +44,15 @@ export const EditUser = (user_id, updatedUser)=> {
         )
 
     }
+
+       
+    // return {
+    //     type: EDIT_USER,
+    //     user_id : user_id,
+    //     updatedUser : updatedUser
+    // }
+
+
    
     // doc is allows you to get a particular document and you need to pass in a particular id.
     // If you use set with an id it's updating. 
@@ -69,14 +68,16 @@ export const DeleteUser = (id) => {
             console.error("Error removing document: ", error);
         });
     }
-    
-    // return {
+
+     // return {
     //     type: DELETE_USER,
     //      payload: id
     //   }
-   
+
+     
     
 }
+
 
 
 export const getAllusers =()=> {
@@ -88,17 +89,21 @@ export const getAllusers =()=> {
                 snapshot.forEach(
                     (doc)=> {
                         users.push({...doc.data(),id:doc.id }) // Adding id from firebase that gets added when we add the user
-                    
+                       
+                       
                     }
                 )
 
 
                 dispatch(
+                   
                     {
                         type: "SET_ALL_USERS",
-                        payload: users
+                        payload: users,
+                       
                     }
                 )
+              
             }
         )
 
@@ -107,3 +112,5 @@ export const getAllusers =()=> {
 
 // Why did we choose this particular code from firebase?
 // Codes don't match exactly as they are in the documentation. Why is that?
+// dispatch and state parameters are not always used. But when we take it off, the
+// code breaks. 

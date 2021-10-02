@@ -1,9 +1,7 @@
 
 
 
-import { initializeApp } from "firebase/app";
-import firebase from "firebase/app"
-import "firebase/firestore"
+import firebase from "firebase"
 
   
 
@@ -17,8 +15,8 @@ const firebaseConfig = {
   measurementId: "G-VLZ945P9NC"
 };
 
-const app = initializeApp(firebaseConfig);
-firebase.firestore()
+
+firebase.initializeApp(firebaseConfig)
 
 
 

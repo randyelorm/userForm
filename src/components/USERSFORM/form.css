@@ -1,7 +1,7 @@
 .classForm-section {
     display: flex;
     flex-direction: column;
-    background-color: cadetblue;
+    background:  linear-gradient(to right, #f46b45,#da22ff);
     align-items:center;
     
     

@@ -6,7 +6,7 @@ html {
 .users{
     display: flex;
     flex-direction: column;
-    background-color: tomato;
+    background:  linear-gradient(to right, #9c256f,#794f29);
     align-items:center;
     justify-content: center;
     color:black;

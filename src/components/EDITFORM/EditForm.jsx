@@ -7,10 +7,10 @@ class EditForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: props.user.name,
-            email: props.user.email,
-            number: props.user.number,
-            id:props.user.id
+            name: props.each_user_in_store.name,
+            email: props.each_user_in_store.email,
+            number: props.each_user_in_store.number,
+            id:props.each_user_in_store.id
         }
     }
 
@@ -19,9 +19,8 @@ class EditForm extends Component {
     }
 
     handleSubmit = (e) => {
-        e.preventDefault();
-       
-        this.props.EditNewUser(this.state.id, this.state)
+        e.preventDefault(); 
+        this.props.EditUser(this.state)
         this.setState({
             name: "",
             email: "",
@@ -71,7 +70,8 @@ class EditForm extends Component {
 
 
 const mapDispatchToProps = {
-    EditNewUser: EditUser
+    EditUser: EditUser
+
 
 }
 

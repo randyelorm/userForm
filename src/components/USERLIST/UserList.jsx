@@ -2,16 +2,15 @@ import React from 'react';
 import User from "../USER/User"
 import { connect } from 'react-redux';
 
-const UserList = ({users,deleteUser,editUser}) => {
+const UserList = ({users}) => {
 
     const userList = users.map (
-        (item) => {
+        (each_user_in_store) => {
           return (
             
            <User 
-           user ={item}  
-           deleteUser = {deleteUser}
-           editUser = {editUser}
+           key = {each_user_in_store.id}
+           each_user_in_store ={each_user_in_store}  
            />
            
           )

@@ -1,0 +1,19 @@
+.all-users {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.users-container{
+    background: url("../../Images/userlistback.jpeg") fixed;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.all-applicant-text {
+    padding-top: 3rem;
+}

@@ -6,7 +6,6 @@ html {
 .users{
     display: flex;
     flex-direction: column;
-    background:  linear-gradient(to right, #9c256f,#794f29);
     align-items:center;
     justify-content: center;
     color:black;
@@ -21,5 +20,15 @@ html {
    
 }
 
+.users-container {
+
+}
+
+.user-info {
+    font-weight: bold;
+}
+.card {
+    box-shadow: 0 0 1em rgba(0,0,0,0.5);
+}
 
 

@@ -1,3 +1,11 @@
 html {
-  overflow-x: hidden;
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+
+}
+
+body {
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+  
 }

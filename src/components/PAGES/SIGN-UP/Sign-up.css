@@ -1,0 +1,56 @@
+.sign-up-box {
+ display: flex;
+ flex-direction: column;
+ justify-content: center !important;
+}
+
+.sign-bottom{
+    background-image: url("");
+    background-repeat: no-repeat;
+    height: 100vh;
+   
+}
+
+.sign-in {
+    text-align: center;
+    color:#0E6DFD;
+}
+
+
+
+.sign-up-body {
+    padding:1rem;
+}
+
+.welcome-login {
+    display:flex;
+    justify-content: space-between;
+}
+
+.sign-up-body {
+    display:flex;
+    justify-content: center;
+
+ 
+}
+
+.google-btn {
+    color:black !important;
+    background-color: white !important;
+    border:1px solid black !important;
+}
+
+.google-logo {
+    width: 20px;
+}
+
+.dance-gif {
+    width: 100%;
+}
+
+@media only screen and (min-width:768px) {
+    .dance-gif {
+        width: 55%;
+    }
+    
+}

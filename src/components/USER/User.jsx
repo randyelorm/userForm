@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import Button from 'react-bootstrap/Button';
 import EditForm from "../EDITFORM/EditForm"
 import Modal from "react-bootstrap/Modal";
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
 
  
 const User = ({each_user_in_store, DeleteUser ,editUser}) => {
@@ -23,12 +25,23 @@ const User = ({each_user_in_store, DeleteUser ,editUser}) => {
     return (
     <>
         <div className ="users">
-           <h3>{each_user_in_store.name}</h3> 
-           <h3>{each_user_in_store.email}</h3> 
-           <h3>{each_user_in_store.number}</h3> 
-           
-           <Button variant="primary" onClick={handleShow}>Edit</Button>{' '} <br />
+        <Card style={{ width: '18rem' }} className ="card">
+        <ListGroup variant="flush">
+        <ListGroup.Item>Name: <span className = "user-info">{each_user_in_store.name} </span> </ListGroup.Item>
+        <ListGroup.Item>Email: <span className = "user-info">{each_user_in_store.email}</span> </ListGroup.Item>
+        <ListGroup.Item>Contact: <span className = "user-info">{each_user_in_store.number} </span></ListGroup.Item>
+        <ListGroup.Item>ID: <span className = "user-info">{each_user_in_store.id}</span> </ListGroup.Item>
+        <ListGroup.Item>   
+            <Button variant="primary" onClick={handleShow}>Edit</Button>{' '} 
            <Button variant="secondary" onClick ={handleDelete}>Delete</Button>{' '}
+          </ListGroup.Item>
+        </ListGroup>
+      </Card>
+          
+           
+          
+           
+         
         </div>
 
         <Modal show={show} onHide={handleClose}>

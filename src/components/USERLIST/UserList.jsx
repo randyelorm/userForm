@@ -1,6 +1,7 @@
 import React from 'react';
 import User from "../USER/User"
 import { connect } from 'react-redux';
+import "./userlist.css"
 
 const UserList = ({users}) => {
 
@@ -16,13 +17,17 @@ const UserList = ({users}) => {
           )
         }
      )
-     return <div>{userList}</div>
+     return <div class ="users-container">
+     
+       <h3 className = "text-center">ALL APPLICANTS</h3>
+     <span  className = "all-users">{userList}</span>  
+       </div>
         
 }
     const mapStateToProps =(state)=> {
 
      return {
-       users: state.users
+       users: state.user.users
      }
 
     }

@@ -1,12 +1,17 @@
-import {createStore, compose, applyMiddleware} from "redux"
+import {createStore, compose, applyMiddleware, combineReducers} from "redux"
 import usersReducer from "../REDUCERS/usersReducers"
-import {getFirebase, reactReduxFirebase,} from "react-redux-firebase"
+import {firebaseReducer, getFirebase, reactReduxFirebase,} from "react-redux-firebase"
 import {getFirestore, reduxFirestore} from "redux-firestore"
 import thunk from "redux-thunk"
 import firebase from '../components/FIREBASE/Config'
-// import firestore from '../components/FIREBASE/Config'
+// import authReducer from "../Reducers/authReducer";
 
-const Store = createStore(usersReducer, compose(
+let reducers = combineReducers({
+    user : usersReducer,
+    firebase: firebaseReducer,
+})
+
+const Store = createStore(reducers, compose(
     applyMiddleware(thunk.withExtraArgument({getFirebase, getFirestore})),
     reduxFirestore(firebase),
     reactReduxFirebase(firebase)
@@ -15,5 +20,3 @@ const Store = createStore(usersReducer, compose(
 
 export default Store
 
-// Why did we install redux firebase if we are not using it here:
-// When I didn't install it, the app didn't work.

@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import "./form.css";
-
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 import { addUser, getAllusers } from '../../ACTIONS/UserAction'
 import { connect } from 'react-redux';
+import {logout} from "../../ACTIONS/authAction"
 
 
 
@@ -42,56 +44,80 @@ class UsersForm extends Component {
         )
     }
 
+
     componentDidMount(){
         this.props.getAllusers()
     }
 
-   
-
-
-
     render() {
         return (
-            <form onSubmit ={this.handleSubmit} className ="classForm-section">
+            <>
+           
+            {/* <button style ={{float:"right"}}>Logout</button> */}
+            <Form onSubmit ={this.handleSubmit} className = "user-form">
             
-            <label htmlFor=""> Name
-             <input 
-             type="text" 
-              value = {this.state.name} 
-              name = "name" 
-              onChange = {this.handleChange} 
-              required ="required" /> 
-             </label>
-             <br/>
-             <br />
+           <h3> ENTER APPLICANTS INFORMATION</h3> 
+            <Form.Group className="mb-3" controlId="">
+                <Form.Label className = "form-label">Name</Form.Label>
+                <Form.Control type="text" 
+                 name = "name"  
+                 value = {this.state.name}  
+                 placeholder="Enter Applicants Fullname"
+                 onChange = {this.handleChange} 
+                 required ="required" 
+                 className = "form-input" 
+                 
+                 />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label className = "form-label">Email</Form.Label>
+                <Form.Control type="email" 
+                 name = "email"  
+                 value = {this.state.email}  
+                 placeholder="Enter Applicants Email"
+                 onChange = {this.handleChange} 
+                 required ="required"
+                 className = "form-input" 
+                 
+                 />
+            </Form.Group>
+
+
+            <Form.Group className="mb-3" controlId="">
+                <Form.Label className = "form-label">Contact</Form.Label>
+                <Form.Control type="number" 
+                 name = "number"  
+                 value = {this.state.number}  
+                 placeholder="Enter Applicants Contact"
+                 onChange = {this.handleChange} 
+                 required ="required" 
+                 className = "form-input" 
+                 
+                 />
+            </Form.Group>
+
 
            
-             <label htmlFor=""> Email
-             <input
-              type="email"
-               value ={this.state.email} 
-               name = "email" 
-               onChange = {this.handleChange}
-                required ="required" /> 
-             </label>
-             <br/>
-             <br />
+           
+        <Button variant="primary" type="submit">
+             Submit
+            </Button>
 
 
-             <label htmlFor=""> Number
-             <input
-              type="number" 
-             value = {this.state.number} 
-             name = "number" 
-             onChange = {this.handleChange} 
-             required ="required"/> 
-             </label>
-             <br/>
-             <br />
-
-             <input className= "submit-btn "  type="submit" />
-
-            </form>
+       <Button
+       variant="secondary" 
+       className ="logout-btn"
+        onClick = { this.props.logout}
+       >
+         Logout
+         </Button>
+      
+     
+       
+         </Form>
+      
+            </>
         );
     }
 }
@@ -99,6 +125,7 @@ class UsersForm extends Component {
 const mapDispatchToProps = {
     addNewUser: addUser,
     getAllusers:getAllusers,
+    logout:logout
 }
 
 export default connect(null, mapDispatchToProps) (UsersForm);

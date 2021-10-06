@@ -1,0 +1,41 @@
+
+ .log-in-container { 
+   padding:2rem;
+ }
+
+  .login-img {
+    width: 100%;
+  }
+
+  .login {
+    color:#0E6DFD !important;
+  }
+
+  .login-btn {
+    margin-bottom: 1rem !important;
+  }
+
+
+
+@media only screen and (min-width:768px) {
+
+ 
+  .log-in-container {
+    display:grid !important;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    margin-top: 4rem;
+    
+   
+  }
+
+  
+  .login-form-input {
+    width: 70% !important;
+  }
+  
+  
+  
+
+
+}

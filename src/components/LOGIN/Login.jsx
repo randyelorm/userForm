@@ -1,11 +1,11 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-
+import googlelogo from "../../Images/google-logo.png"
 import "./Login.css"
 import { connect } from 'react-redux';
 import { Link} from "react-router-dom";
-import {loginWIthEmail} from "../../ACTIONS/authAction"
+import {loginWIthEmail, loginWithGoogle } from "../../ACTIONS/authAction"
 
 import loginImg from "../../Images/login.gif"
 
@@ -45,16 +45,22 @@ const Login = (props) => {
            
      
           <Button variant="primary" className = "login-btn" type="submit">
-               Login
+               Login <i class="fas fa-sign-in-alt"></i>
             </Button>
-                <br/>
-            
+            <br/>
+            <Button  className = "google-btn" onClick = {props.loginWithGoogle}>
+            <img src={googlelogo} className ="userForm-input"  className = "google-logo" alt="" /> Or Login With Google 
+            </Button>
+            <br/>
+            <br/>
             <h3>Don't have an account yet?</h3>
             <Link to = "/signup">
-            <Button variant="primary" className = "login-btn" type="submit">
-               Sign Up
+            <Button variant="secondary" className = "sign-up-btn-in-login" type="submit">
+               Sign Up <i class="fas fa-user-plus"></i>
             </Button>
             </Link>
+
+           
          
          </Form>
 
@@ -72,7 +78,8 @@ const mapStateToProps = (state)=> {
 }
 
 const mapDispatchToProps = {
-    loginWIthEmail
+    loginWIthEmail,
+    loginWithGoogle
 }
 
 export default  connect(mapStateToProps, mapDispatchToProps)(Login);

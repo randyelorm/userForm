@@ -58,8 +58,8 @@ const Signup = (props) => {
                 <Form.Control type="password" className ="userForm-input"  placeholder="Password" name = "password" required = "required" />
             </Form.Group>
            
-          <Button variant="primary" type="submit">
-          Sign-up with email
+          <Button variant="secondary" type="submit">
+          Sign-up with email <i class="fas fa-user-plus"></i>
             </Button>
               <br/>
               <br/>
@@ -72,7 +72,7 @@ const Signup = (props) => {
           <h4>Already have an account?</h4>
           
           <Link to = "/login">
-          <Button variant="primary" className = "login-btn"> Login</Button>
+          <Button variant="primary" className = "login-btn"> Login  <i class="fas fa-sign-in-alt"></i></Button>
           </Link>
         
          </Form>

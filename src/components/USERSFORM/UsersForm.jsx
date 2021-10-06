@@ -101,7 +101,7 @@ class UsersForm extends Component {
            
            
         <Button variant="primary" type="submit">
-             Submit
+             Submit <i class="fas fa-plus"></i>
             </Button>
 
 
@@ -110,7 +110,7 @@ class UsersForm extends Component {
        className ="logout-btn"
         onClick = { this.props.logout}
        >
-         Logout
+         Logout  <i class="fas fa-reply"></i>
          </Button>
       
      

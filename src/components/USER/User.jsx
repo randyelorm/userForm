@@ -32,8 +32,8 @@ const User = ({each_user_in_store, DeleteUser ,editUser}) => {
         <ListGroup.Item>Contact: <span className = "user-info">{each_user_in_store.number} </span></ListGroup.Item>
         <ListGroup.Item>ID: <span className = "user-info">{each_user_in_store.id}</span> </ListGroup.Item>
         <ListGroup.Item>   
-            <Button variant="primary" onClick={handleShow}>Edit</Button>{' '} 
-           <Button variant="secondary" onClick ={handleDelete}>Delete</Button>{' '}
+            <Button variant="primary" onClick={handleShow}>Edit <i class="fas fa-edit"></i></Button>{' '} 
+           <Button variant="secondary" onClick ={handleDelete}>Delete <i class="far fa-trash-alt"></i></Button>{' '}
           </ListGroup.Item>
         </ListGroup>
       </Card>

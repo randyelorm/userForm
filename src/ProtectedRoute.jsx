@@ -35,12 +35,3 @@ export default connect(mapStateToProps)(PrivateRoute);
 
 
 
-   // render={(props) => {
-        //   if (auth.isLoaded && !auth.isEmpty) {
-        //     return <Component />;
-        //   } else {
-        //     <Redirect
-        //       to={{ pathname: "./login", state: { from: props.location } }}
-        //     />;
-        //   }
-        // }}

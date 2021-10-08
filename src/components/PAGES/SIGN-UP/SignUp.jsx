@@ -22,14 +22,7 @@ const Signup = (props) => {
       let password = e.target.elements.password.value
       props.registerWithEmail(email,password)
 
-      
-    
-
-      
   }
-
- 
-
 
 
     return (

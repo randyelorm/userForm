@@ -62,7 +62,7 @@ class UsersForm extends Component {
                 <Form.Control type="text" 
                  name = "name"  
                  value = {this.state.name}  
-                 placeholder="Enter Applicants Fullname"
+                 placeholder="Enter Fullname"
                  onChange = {this.handleChange} 
                  required ="required" 
                  className = "form-input" 
@@ -75,7 +75,7 @@ class UsersForm extends Component {
                 <Form.Control type="email" 
                  name = "email"  
                  value = {this.state.email}  
-                 placeholder="Enter Applicants Email"
+                 placeholder="Enter Email"
                  onChange = {this.handleChange} 
                  required ="required"
                  className = "form-input" 
@@ -89,7 +89,7 @@ class UsersForm extends Component {
                 <Form.Control type="number" 
                  name = "number"  
                  value = {this.state.number}  
-                 placeholder="Enter Applicants Contact"
+                 placeholder="Enter Contact"
                  onChange = {this.handleChange} 
                  required ="required" 
                  className = "form-input" 

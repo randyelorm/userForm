@@ -1,23 +1,18 @@
 
 // Actions To sign in with email
 
-export const registerWithEmail = (email, password, replace)=> {  // replace is from react router dom
+export const registerWithEmail = (email, password,)=> {  
     return (dispatch, state, {getFirebase})=> {
 
 let firebase = getFirebase()
 firebase.auth().createUserWithEmailAndPassword(email, password)
   .then((user) => {
-    
-  
     console.log(user)
- 
-   
   })
   .catch((error) => {
     var errorCode = error.code;
     var errorMessage = error.message;
     alert(error)
-    // ...
   });
     }
 }  

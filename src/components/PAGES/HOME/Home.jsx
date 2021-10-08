@@ -4,7 +4,7 @@ import UserList from "../../USERLIST/UserList"
 import Button from 'react-bootstrap/Button';
 
 
-const Home = ({logout}) => {
+const Home = ({}) => {
     return (
         <>
         <div>

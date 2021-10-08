@@ -35,6 +35,15 @@ const usersReducer = (state = initialState, action)=> {
             })
 
             return {users: notDeletedUsers }
+
+        //With firebase connected you don't need add user, edit user, and delete user.
+        // Becuase are reading from firebase, anything we do (edit, add or delete) 
+        // with the information from firebase
+        // that we are displaying with SET_ALL_USERS on our screen is sent to firebase.
+        // Firebase gets what we have done (edit,add or delete) updates their system and
+        // sends the information to back to us for us to display with SET_ALL_USERS.
+        // So all we are doing now is performing orperations on our app, and reading from
+        // from firebase the result of that operation to display on our screens. 
            
       case'SET_ALL_USERS':
     
